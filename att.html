@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        *
+        {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body
+        {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 90vh;
+        }
+        
+        h1
+        {
+            font-size: 50px;
+        }
+        
+        p
+        {
+            font-size: 30px;
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <p></p>
+
+    <h1>10</h1>
+    
+    <button>!Iniciar contagem regressiva!</button>    
+
+    <!--<p>Uau, botão</p>-->
+    
+    <!--<input type="text">-->
+    
+    <!--<p></p>-->
+    
+
+    
+    <script>
+        
+        //let numeroCliques = 0;
+        
+        //const button = document.querySelector('button');
+        //const text = document.querySelectorAll('p'); //retorna lista
+        
+        //const input = document.querySelector('input');
+        
+        //VERSAO 1
+        
+        //button.onclick = contarCliques; //funcao de callback <-- forma antiga
+        
+        //function contarCliques()
+        //{
+        //    numeroCliques++;
+        //    text.innerText = "O botão foi clicado " + numeroCliques + " vezes";
+        //}
+        
+        //VERSAO 1
+        
+        
+        //VERSAO 2
+        
+        //button.onclick = function () //funcao anonima <-- usamos para diminuir o codigo, quando a funcionalidade vai ser usada so uma vez
+        //{
+        //    numeroCliques++;
+        //    text.innerText = "O botão foi clicado " + numeroCliques + " vezes";
+        //}
+        
+        //VERSAO 2
+        
+        //VERSAO 3
+        
+        //button.addEventListener("click", ()=> //ou function normal ou arrow function(a que está agora)
+        //{
+        //    numeroCliques++;
+        //    text[0].innerText = "O botão foi clicado " + numeroCliques + " vezes";
+        //});
+        //
+        //input.addEventListener("keyup", ()=>
+        //{
+        //    let textoDigitado = input.value;
+        //    
+        //    if (textoDigitado == "Calabresa") 
+        //    {
+        //        text[1].innerText = "Um sabor clássico"; 
+        //    }else if (textoDigitado == "Frango com Catupiry")
+        //    {
+        //        text[1].innerText = "Bom demais!"; 
+        //    }else if (textoDigitado == "Chinesinha sem escarola")
+        //   {
+        //       text[1].innerText = "SABE MUITOOO"; 
+        //    }
+        //});
+        
+        //VERSAO 3
+        
+        //VERSAO 4
+        
+        //document.addEventListener("click" , ()=>
+        //{
+        //    let Color = "RGB(" + Math.random() * 255 + "," + Math.random() * 255 + "," + Math.random() * 255 + ")";
+        //    document.body.style.backgroundColor = Color;
+        //});
+        
+        //VERSAO 4
+        
+        //VERSAO 5
+        
+        //const input = document.querySelector('input');
+        //const texto = document.querySelectorAll('p');
+                
+        //input.addEventListener("keyup", ()=>
+        //{
+        //    let textoDig = input.value;
+            
+        //    if(textoDig == "chocolate")
+        //    {
+        //        texto[1].innerText = "Eu amo sorvete de chocolate";
+        //    }else{
+        //        texto[1].innerText = "Não gosto disso";
+        //    }
+        //    
+        //});
+        
+        //VERSAO 5
+        
+        //VERSAO 6
+        
+        let contador = 10;
+        
+        const button = document.querySelector('button');
+        const contagem = document.querySelector('h1');
+        const fim = document.querySelector('p');
+        
+        button.addEventListener("click", ()=>
+        {
+            contador = 10;
+            fim.innerText = "";
+            
+            let intervalo = setInterval(() => {
+                contagem.innerText = contador;
+                contador--;
+                
+                if(contador < 0)
+                {
+                    fim.innerText = "!fim da contagem!";
+                    clearInterval(intervalo);
+                }
+            }, 1000);
+        });
+        
+    </script>
+    
+</body>
+
+</html>
